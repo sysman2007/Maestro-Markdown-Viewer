@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Maestro Markdown Viewer — Persian RTL",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Professional Markdown viewer with Persian/English RTL, real Mermaid rendering tuned for Persian labels, PrismJS multi-language syntax highlighting, local fonts, themes, in-page TOC and print support.",
   "permissions": [
     "storage"
