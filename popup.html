@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Maestro Markdown Viewer</title>
+  <style>
+    @font-face{font-family:V;src:url('fonts/Vazirmatn[wght].woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+    body{width:280px;margin:0;padding:18px;font-family:V,Tahoma,sans-serif;background:#101722;color:#edf2f7}
+    h2{margin:0 0 8px;font-size:17px}
+    p{font-size:12px;color:#aab5c2;line-height:1.8}
+    button{width:100%;padding:10px;border:0;border-radius:8px;background:#7778f4;color:white;font-family:inherit;cursor:pointer}
+    button:hover{filter:brightness(1.08)}
+    .tip{margin-top:12px;padding:10px;background:#1a2432;border-radius:8px;font-size:11px;line-height:1.7}
+  </style>
+</head>
+<body>
+  <h2>Maestro Markdown Viewer</h2>
+  <p>نمایش حرفه‌ای Markdown با تشخیص هوشمند فارسی و انگلیسی.</p>
+  <button id="opt" type="button">تنظیم فونت و ظاهر</button>
+  <div class="tip">برای بازکردن فایل‌های محلی، گزینه Allow access to file URLs را در chrome://extensions فعال کنید.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
