@@ -1,23 +1,25 @@
 # Maestro Markdown Viewer — Persian RTL
 
-اکستنشن Chrome (Manifest V3) برای نمایش حرفه‌ای فایل‌های Markdown در خود مرورگر، با پشتیبانی کامل از فارسی و راست‌به‌چپ، رندر واقعی Mermaid، رنگ‌آمیزی کد با PrismJS، فونت‌های محلی، تم روشن و تیره، فهرست مطالب و چاپ تمیز.
+[فارسی](README.fa.md) | **English**
 
-همه‌چیز **کاملاً محلی** اجرا می‌شود و محتوای فایل به هیچ سروری ارسال نمی‌شود.
+A Chrome extension (Manifest V3) that renders Markdown files right in the browser, with full Persian and right-to-left support, real Mermaid rendering, PrismJS syntax highlighting, local fonts, light and dark themes, a table of contents and clean printing.
+
+Everything runs **fully locally**. File contents are never sent to any server.
 
 ---
 
-## نصب
+## Installation
 
-1. فایل ZIP را Extract کنید.
-2. در Chrome آدرس `chrome://extensions` را باز کنید.
-3. **Developer mode** را فعال کنید.
-4. روی **Load unpacked** کلیک کنید و پوشهٔ اکستنشن را انتخاب کنید (پوشه‌ای که `manifest.json` در آن است).
-5. در جزئیات اکستنشن، گزینهٔ **Allow access to file URLs** را فعال کنید (برای فایل‌های محلی لازم است).
-6. یک فایل Markdown را با Chrome باز کنید.
+1. Extract the ZIP file.
+2. Open `chrome://extensions` in Chrome.
+3. Turn on **Developer mode**.
+4. Click **Load unpacked** and select the extension folder (the one that contains `manifest.json`).
+5. In the extension details, turn on **Allow access to file URLs** (required for local files).
+6. Open a Markdown file in Chrome.
 
-### فایل‌های پشتیبانی‌شده
+### Supported files
 
-| پسوند | `file://` | `http://` و `https://` |
+| Extension | `file://` | `http://` and `https://` |
 |---|---|---|
 | `.md` | ✅ | ✅ |
 | `.markdown` | ✅ | ✅ |
@@ -25,132 +27,132 @@
 
 ---
 
-## امکانات
+## Features
 
-### جهت متن و فونت
-- هر بلوک (عنوان، پاراگراف، آیتم لیست، نقل‌قول، سلول جدول) جداگانه بررسی می‌شود:
-  - اگر حتی یک حرف فارسی، عربی یا عبری داشته باشد: **RTL** با فونت فارسی انتخابی.
-  - اگر کاملاً انگلیسی باشد: **LTR** با Inter یا فونت استاندارد سیستم.
-- Code block و inline code همیشه **LTR** و monospace هستند.
-- آیتم‌های فهرست مطالب هم جداگانه جهت و فونت مناسب می‌گیرند.
-- فونت‌ها داخل اکستنشن هستند و از اینترنت دانلود نمی‌شوند:
-  - **فارسی:** IranSans X، IranSans، Vazirmatn، IranYekan X
-  - **انگلیسی:** Inter، یا فونت‌های استاندارد سیستم
+### Text direction and fonts
+- Each block (heading, paragraph, list item, blockquote, table cell) is checked separately:
+  - If it contains even one Persian, Arabic or Hebrew letter: **RTL** with the selected Persian font.
+  - If it is entirely English: **LTR** with Inter or the standard system fonts.
+- Code blocks and inline code are always **LTR** and monospace.
+- Table of contents entries also get their own direction and font.
+- Fonts are bundled with the extension and never downloaded from the internet:
+  - **Persian:** IranSans X, IranSans, Vazirmatn, IranYekan X
+  - **English:** Inter, or the standard system fonts
 
-### عناصر Markdown
-- عنوان‌ها (`#` تا `######` و همچنین سبک Setext با `===` و `---`)
-- **پررنگ**، *مورب*، ~~خط‌خورده~~، `inline code`، شکست خط با دو فاصله در انتهای خط
-- لینک و تصویر (با title اختیاری؛ تصاویر به‌صورت lazy بارگذاری می‌شوند)
-- لیست نقطه‌ای و شماره‌دار، نقل‌قول، خط افقی
-- جدول با ستون‌های چپ‌چین، وسط‌چین و راست‌چین
-- Code block با ```` ``` ```` یا `~~~`
-- خطوطی که فقط تگ HTML هستند (مثل `<div dir="rtl">`) به‌صورت HTML رندر می‌شوند، نه متن خام.
+### Markdown elements
+- Headings (`#` to `######`, plus Setext style with `===` and `---`)
+- **Bold**, *italic*, ~~strikethrough~~, `inline code`, line breaks with two trailing spaces
+- Links and images (optional title; images load lazily)
+- Bulleted and numbered lists, blockquotes, horizontal rules
+- Tables with left, center and right aligned columns
+- Code blocks fenced with ```` ``` ```` or `~~~`
+- Lines that contain only an HTML tag (such as `<div dir="rtl">`) are rendered as HTML, not as raw text.
 
-### رنگ‌آمیزی کد
-- **PrismJS 1.30.0** با بیش از ۸۰ زبان؛ از جمله JavaScript، TypeScript، JSX/TSX، JSON، HTML/XML، CSS، Bash، PowerShell، Python، C#، Java، C/C++، Go، Rust، PHP، Ruby، Kotlin، Swift، SQL، YAML، TOML، INI، GraphQL، Dockerfile، Diff و Markdown.
-- برچسب نام زبان، تعداد خطوط، و شمارهٔ خطوط در یک ستون جدا (رنگ‌آمیزی رشته‌ها و کامنت‌های چندخطی خراب نمی‌شود).
-- دکمهٔ **Copy** برای کپی کد.
+### Syntax highlighting
+- **PrismJS 1.30.0** with more than 80 languages, including JavaScript, TypeScript, JSX/TSX, JSON, HTML/XML, CSS, Bash, PowerShell, Python, C#, Java, C/C++, Go, Rust, PHP, Ruby, Kotlin, Swift, SQL, YAML, TOML, INI, GraphQL, Dockerfile, Diff and Markdown.
+- Language label, line count, and line numbers in a separate column (multi-line strings and comments keep their highlighting).
+- **Copy** button for code.
 
-### نمودارهای Mermaid
-- رندر با **Mermaid رسمی نسخهٔ ۱۱**، از جمله `graph`/`flowchart`، `stateDiagram-v2` و سایر انواع نمودار.
-- تنظیم‌شده برای برچسب‌های فارسی: هر خط برچسب جهت مستقل دارد، پس متن‌های ترکیبی مثل `OwnerId = خریدار` به‌هم نمی‌ریزند.
-- پشتهٔ فونت نمودار: Inter برای لاتین و اعداد، سپس IranSans X برای فارسی. رندر تا آماده‌شدن فونت‌ها صبر می‌کند تا اندازه‌ها درست باشند.
-- رنگ‌ها از تم صفحه گرفته می‌شوند و با تغییر تم، نمودارها دوباره رندر می‌شوند.
-- اگر Mermaid نتواند یک نمودار را parse کند، همان نمودار با موتور پشتیبان (fallback) کشیده می‌شود و بقیهٔ صفحه سالم می‌ماند.
-- دکمهٔ **Fullscreen** (با حفظ نسبت تصویر؛ با `Esc` بسته می‌شود)، دکمهٔ **Copy source** و نمایش جمع‌شوندهٔ سورس نمودار.
+### Mermaid diagrams
+- Rendered with the official **Mermaid 11**, including `graph`/`flowchart`, `stateDiagram-v2` and other diagram types.
+- Tuned for Persian labels: each label line has its own direction, so mixed text such as `OwnerId = خریدار` is not scrambled.
+- Diagram font stack: Inter for Latin text and digits, then IranSans X for Persian. Rendering waits for fonts to load so measurements are correct.
+- Colors follow the page theme, and diagrams re-render when the theme changes.
+- If Mermaid cannot parse a diagram, it is drawn by the fallback renderer and the rest of the page stays intact.
+- **Fullscreen** button (keeps the aspect ratio; closes with `Esc`), **Copy source** button, and a collapsible view of the diagram source.
 
-### فهرست مطالب (منوی کناری) و پیمایش
-- فهرست مطالب خودکار از روی عنوان‌های سند ساخته می‌شود.
-- **نمایش بر اساس اندازهٔ صفحه:**
-  - دسکتاپ (عرض بیشتر از 850px): به‌طور پیش‌فرض باز است.
-  - موبایل (850px و کمتر): به‌طور پیش‌فرض بسته است و وقتی باز شود روی محتوا قرار می‌گیرد.
-  - با عبور از مرز 850px (مثلاً تغییر اندازهٔ پنجره) حالت پیش‌فرض همان اندازه دوباره اعمال می‌شود.
-- **باز و بسته کردن:** با کلیک روی **لوگوی هدر** یا دکمهٔ **☰**. لوگو یک دکمهٔ واقعی با `aria-expanded` است و با کیبورد هم کار می‌کند.
-- در موبایل، بعد از کلیک روی یک آیتم فهرست، منو خودکار بسته می‌شود.
-- عنوان فعال هنگام پیمایش هایلایت می‌شود و مقصد لینک لحظه‌ای فلش می‌زند.
-- لینک‌های داخلی (`[...](#عنوان)`) در همان صفحه پیمایش می‌کنند و تب جدید باز نمی‌کنند؛ فقط لینک‌های بیرونی در تب جدید باز می‌شوند.
-- شناسهٔ عنوان‌ها با قاعدهٔ GitHub ساخته می‌شود و اگر اختلاف جزئی وجود داشته باشد، تطبیق تقریبی انجام می‌شود.
-- اگر آدرس صفحه `#anchor` داشته باشد، بعد از بارگذاری به همان بخش می‌رود.
+### Table of contents (sidebar) and navigation
+- The table of contents is built automatically from the document headings.
+- **Visibility depends on screen size:**
+  - Desktop (wider than 850px): open by default.
+  - Mobile (850px or narrower): closed by default; when opened it overlays the content.
+  - When the viewport crosses 850px (for example, on window resize), the default for the new size is applied again.
+- **Open and close** by clicking the **header logo** or the **☰** button. The logo is a real button with `aria-expanded` and works with the keyboard.
+- On mobile, the sidebar closes automatically after you click a TOC entry.
+- The active heading is highlighted while scrolling, and the link target briefly flashes.
+- Internal links (`[...](#heading)`) scroll within the page and do not open a new tab; only external links open in a new tab.
+- Heading IDs follow GitHub's rules, with approximate matching when there is a small mismatch.
+- If the URL contains a `#anchor`, the page scrolls to that section after loading.
 
-### هدر و ابزارها
-| دکمه | کار |
+### Header and toolbar
+| Button | Action |
 |---|---|
-| لوگو / ☰ | باز و بسته کردن فهرست مطالب |
-| ◐ | جابه‌جایی بین تم روشن و تیره (برای همین صفحه) |
-| Print | چاپ |
-| Settings | باز کردن صفحهٔ تنظیمات اکستنشن |
+| Logo / ☰ | Open and close the table of contents |
+| ◐ | Switch between light and dark theme (for the current page) |
+| Print | Print |
+| Settings | Open the extension settings page |
 
-در موبایل دکمه‌های Print و Settings برای صرفه‌جویی در فضا پنهان می‌شوند.
+On mobile, the Print and Settings buttons are hidden to save space.
 
-### چاپ
-- هدر، منوی کناری، فوتر و دکمه‌های کد و نمودار در چاپ حذف می‌شوند و فقط محتوای سند چاپ می‌شود.
+### Printing
+- The header, sidebar, footer and code and diagram buttons are removed when printing; only the document content is printed.
 
-### تنظیمات
-از دکمهٔ Settings در هدر، popup اکستنشن، یا صفحهٔ Options قابل دسترسی است. تنظیمات در `chrome.storage.sync` ذخیره می‌شوند و بین دستگاه‌های متصل به یک حساب Chrome همگام می‌شوند.
+### Settings
+Available from the Settings button in the header, the extension popup, or the Options page. Settings are stored in `chrome.storage.sync` and sync across devices signed in to the same Chrome account.
 
-| تنظیم | پیش‌فرض | توضیح |
+| Setting | Default | Description |
 |---|---|---|
-| فونت فارسی | IranSans X | IranSans X، IranSans، Vazirmatn، IranYekan X |
-| فونت انگلیسی | Inter | Inter یا فونت‌های استاندارد سیستم |
-| تم | خودکار | خودکار (بر اساس تم سیستم)، روشن، تیره |
-| حداکثر عرض محتوا | 980px | |
-| اندازهٔ متن | 17px | |
-| فاصلهٔ خطوط | 1.9 | |
-| نمایش فهرست مطالب | روشن | اگر خاموش باشد، منو در هر اندازه‌ای اول بسته است ولی با لوگو یا ☰ باز می‌شود |
+| Persian font | IranSans X | IranSans X, IranSans, Vazirmatn, IranYekan X |
+| English font | Inter | Inter or the standard system fonts |
+| Theme | Auto | Auto (follows the system theme), light, dark |
+| Maximum content width | 980px | |
+| Font size | 17px | |
+| Line height | 1.9 | |
+| Show table of contents | On | When off, the sidebar starts closed at every size but can still be opened with the logo or ☰ |
 
 ---
 
-## ساختار پروژه
+## Project structure
 
-| فایل / پوشه | نقش |
+| File / folder | Role |
 |---|---|
-| `manifest.json` | تعریف اکستنشن (Manifest V3)، content scriptها و دسترسی‌ها |
-| `viewer.js` | parser مارک‌داون، رندر صفحه، جهت‌دهی متن، فهرست مطالب، Mermaid و استایل‌ها |
-| `background.js` | service worker؛ باز کردن صفحهٔ تنظیمات از داخل viewer |
-| `popup.html`, `popup.js` | popup دکمهٔ اکستنشن در نوار ابزار |
-| `options.html`, `options.js`, `options.css` | صفحهٔ تنظیمات |
-| `vendor/` | PrismJS، Mermaid و رندرکنندهٔ پشتیبان Mermaid |
-| `fonts/` | فونت‌های محلی فارسی و انگلیسی |
-| `icons/` | آیکون‌های اکستنشن و لوگوی هدر |
+| `manifest.json` | Extension definition (Manifest V3), content scripts and permissions |
+| `viewer.js` | Markdown parser, page rendering, text direction, table of contents, Mermaid and styles |
+| `background.js` | Service worker; opens the settings page from inside the viewer |
+| `popup.html`, `popup.js` | Popup for the toolbar button |
+| `options.html`, `options.js`, `options.css` | Settings page |
+| `vendor/` | PrismJS, Mermaid and the fallback Mermaid renderer |
+| `fonts/` | Local Persian and English fonts |
+| `icons/` | Extension icons and header logo |
 
-### دسترسی‌ها
-- `storage`: برای ذخیرهٔ تنظیمات.
-- `host_permissions` روی `file:///*`، `http://*/*` و `https://*/*`: برای اجرای viewer روی فایل‌های Markdown. content script فقط روی آدرس‌هایی با پسوند `.md`، `.markdown` و `.mdx` اجرا می‌شود.
+### Permissions
+- `storage`: to save settings.
+- `host_permissions` for `file:///*`, `http://*/*` and `https://*/*`: to run the viewer on Markdown files. The content script only runs on URLs ending in `.md`, `.markdown` or `.mdx`.
 
 ---
 
-## لایسنس
+## License
 
-کد این اکستنشن تحت **Apache License 2.0** منتشر می‌شود. متن کامل در فایل [`LICENSE`](LICENSE) است.
+The extension code is released under the **Apache License 2.0**. The full text is in [`LICENSE`](LICENSE).
 
-کتابخانه‌ها و فونت‌های شخص ثالث در `vendor/` و `fonts/` تحت لایسنس خودشان هستند و Apache 2.0 شامل آن‌ها نمی‌شود:
-- PrismJS و Mermaid: لایسنس MIT
-- Inter و Vazirmatn: SIL Open Font License 1.1
-- IranSans، IranSans X و IranYekan X: لایسنس سازندهٔ فونت (برای بازتوزیع، شرایط لایسنس آن را بررسی کنید)
+Third-party libraries and fonts in `vendor/` and `fonts/` are under their own licenses and are not covered by Apache 2.0:
+- PrismJS and Mermaid: MIT License
+- Inter and Vazirmatn: SIL Open Font License 1.1
+- IranSans, IranSans X and IranYekan X: the font vendor's license (check its terms before redistributing)
 
-## تاریخچهٔ نسخه‌ها
+## Changelog
 
 ### 1.5.0
-- انتشار تحت لایسنس Apache 2.0.
-- منوی کناری در دسکتاپ به‌طور پیش‌فرض باز و در موبایل به‌طور پیش‌فرض بسته است؛ با عبور از مرز 850px حالت پیش‌فرض دوباره اعمال می‌شود.
-- کلیک روی لوگوی هدر منو را باز و بسته می‌کند (با پشتیبانی از کیبورد و `aria-expanded`).
+- Released under the Apache License 2.0.
+- The sidebar is open by default on desktop and closed by default on mobile; the default is re-applied when the viewport crosses 850px.
+- Clicking the header logo opens and closes the sidebar (with keyboard support and `aria-expanded`).
 
 ### 1.3.0
-- جایگزینی رندرکنندهٔ دست‌ساز با Mermaid رسمی نسخهٔ ۱۱؛ رندرکنندهٔ قبلی به‌عنوان fallback حفظ شد.
-- رفع روی‌هم‌افتادگی و برش متن فارسی، برچسب‌های خالی یال‌ها و `subgraph`، و متن سفید روی سفید در `stateDiagram`.
-- همگام شدن رنگ نمودارها با تم و بهبود Fullscreen (حفظ نسبت تصویر، بستن با `Esc`).
-- به‌روزرسانی PrismJS به 1.30.0 با بیش از ۸۰ زبان؛ شمارهٔ خطوط در ستون جدا.
-- پیمایش لینک‌های داخلی در همان صفحه، شناسهٔ عنوان به سبک GitHub، هایلایت عنوان فعال، و رندر خطوط HTML.
+- Replaced the hand-written renderer with the official Mermaid 11; the previous renderer is kept as a fallback.
+- Fixed overlapping and clipped Persian text, empty edge and `subgraph` labels, and white-on-white text in `stateDiagram`.
+- Diagram colors follow the theme; improved Fullscreen (keeps aspect ratio, closes with `Esc`).
+- Updated PrismJS to 1.30.0 with more than 80 languages; line numbers in a separate column.
+- In-page scrolling for internal links, GitHub-style heading IDs, active heading highlight, and rendering of HTML-only lines.
 
 ### 1.2.0
-- رندر Mermaid برای `graph TB`، `graph LR` و `stateDiagram-v2` با zoom، کپی سورس و سورس جمع‌شونده.
-- رنگ‌آمیزی کد با PrismJS، شمارهٔ خطوط، تعداد خطوط و برچسب زبان.
-- استفاده از لوگوی Maestro Markdown برای آیکون‌ها و هدر.
+- Mermaid rendering for `graph TB`, `graph LR` and `stateDiagram-v2`, with zoom, source copy and collapsible source.
+- PrismJS syntax highlighting, line numbers, line count and language label.
+- Maestro Markdown logo used for the icons and header.
 
 ### 1.0.2
-- حذف خطای CSP مربوط به inline script در popup.
-- باز شدن تنظیمات از طریق service worker با `chrome.runtime.openOptionsPage()`.
+- Removed the inline-script CSP violation from the popup.
+- Settings open through the service worker with `chrome.runtime.openOptionsPage()`.
 
 ### 1.0.1
-- آیتم‌های فارسی فهرست مطالب همیشه با IRANSansX نمایش داده می‌شوند.
-- دکمهٔ Settings در هدر مستقیماً صفحهٔ تنظیمات را باز می‌کند.
+- Persian table of contents entries always use IRANSansX.
+- The Settings button in the header opens the settings page directly.
