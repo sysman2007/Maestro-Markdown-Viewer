@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Maestro Markdown Viewer — Persian RTL",
+  "version": "1.5.0",
+  "description": "Professional Markdown viewer with Persian/English RTL, real Mermaid rendering tuned for Persian labels, PrismJS multi-language syntax highlighting, local fonts, themes, in-page TOC and print support.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "file:///*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_title": "Maestro Markdown Viewer",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*/*.md",
+        "file:///*/*.markdown",
+        "http://*/*.md",
+        "https://*/*.md",
+        "http://*/*.markdown",
+        "https://*/*.markdown",
+		"file:///*/*.mdx",
+        "http://*/*.mdx",
+        "https://*/*.mdx"
+      ],
+      "js": [
+        "vendor/prism-bundle.js",
+        "vendor/mermaid.min.js",
+        "vendor/mermaid-fallback.js",
+        "viewer.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "fonts/*.woff2",
+        "icons/*.png"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
