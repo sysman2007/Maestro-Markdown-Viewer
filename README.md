@@ -60,6 +60,12 @@ Everything runs **fully locally**. File contents are never sent to any server.
 - Colors follow the page theme, and diagrams re-render when the theme changes.
 - If Mermaid cannot parse a diagram, it is drawn by the fallback renderer and the rest of the page stays intact.
 - **Fullscreen** button (keeps the aspect ratio; closes with `Esc`), **Copy source** button, and a collapsible view of the diagram source.
+- **Zoom and pan** (25% to 800%):
+  - **−**, **+** and percentage buttons in the diagram header; clicking the percentage resets to 100%.
+  - Inline: **Ctrl/⌘ + mouse wheel** zooms toward the cursor (a plain wheel keeps scrolling the page).
+  - Fullscreen: the **mouse wheel** zooms, and the keys **+**, **−** and **0** zoom in, zoom out and reset.
+  - **Drag** to pan when zoomed in or in fullscreen; **pinch** with two fingers on touch screens; **double-click** resets.
+  - Zoom survives the diagram re-rendering on theme change, resets when entering or leaving fullscreen, and is ignored when printing.
 
 ### Table of contents (sidebar) and navigation
 - The table of contents is built automatically from the document headings.
@@ -131,6 +137,9 @@ Third-party libraries and fonts in `vendor/` and `fonts/` are under their own li
 - IranSans, IranSans X and IranYekan X: the font vendor's license (check its terms before redistributing)
 
 ## Changelog
+
+### 1.6.0
+- Zoom and pan for Mermaid diagrams: header buttons, Ctrl/⌘ + wheel, keyboard shortcuts in fullscreen, drag, pinch and double-click to reset.
 
 ### 1.5.0
 - Released under the Apache License 2.0.
