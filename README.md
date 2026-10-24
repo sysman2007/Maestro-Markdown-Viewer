@@ -132,6 +132,9 @@ Third-party libraries and fonts in `vendor/` and `fonts/` are under their own li
 
 ## Changelog
 
+### Unreleased
+- Fixed an uncaught `TypeError` in `vendor/prism-bundle.js`: the `vbnet` grammar extends `basic`, which was missing from the bundle, so `vbnet` and every language after it in the bundle (F#, Haskell, Elixir, …) failed to load. Added the PrismJS 1.30.0 `basic` component before `vbnet`.
+
 ### 1.5.0
 - Released under the Apache License 2.0.
 - The sidebar is open by default on desktop and closed by default on mobile; the default is re-applied when the viewport crosses 850px.
