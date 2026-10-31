@@ -55,6 +55,9 @@ Everything runs **fully locally**. File contents are never sent to any server.
 
 ### Mermaid diagrams
 - Rendered with the official **Mermaid 11**, including `graph`/`flowchart`, `stateDiagram-v2` and other diagram types.
+- **Compact ELK layout** (default): orthogonal edges and a tighter arrangement, using the official `@mermaid-js/layout-elk` package bundled locally. The classic Dagre layout is available in Settings.
+- **Modern Neo look** (default): rounded nodes, a soft blue fill and no shadows, adapted to light and dark themes. The classic look is available in Settings.
+- A diagram can still choose its own layout or look with Mermaid frontmatter (`config: layout: dagre`).
 - Tuned for Persian labels: each label line has its own direction, so mixed text such as `OwnerId = خریدار` is not scrambled.
 - Diagram font stack: Inter for Latin text and digits, then IranSans X for Persian. Rendering waits for fonts to load so measurements are correct.
 - Colors follow the page theme, and diagrams re-render when the theme changes.
@@ -104,6 +107,8 @@ Available from the Settings button in the header, the extension popup, or the Op
 | Maximum content width | 980px | |
 | Font size | 17px | |
 | Line height | 1.9 | |
+| Mermaid layout | Compact (ELK) | Compact (ELK) or classic (Dagre) |
+| Mermaid look | Modern (Neo) | Modern (Neo) or classic |
 | Show table of contents | On | When off, the sidebar starts closed at every size but can still be opened with the logo or ☰ |
 
 ---
@@ -117,7 +122,7 @@ Available from the Settings button in the header, the extension popup, or the Op
 | `background.js` | Service worker; opens the settings page from inside the viewer |
 | `popup.html`, `popup.js` | Popup for the toolbar button |
 | `options.html`, `options.js`, `options.css` | Settings page |
-| `vendor/` | PrismJS, Mermaid and the fallback Mermaid renderer |
+| `vendor/` | PrismJS, Mermaid, the Mermaid ELK layout and the fallback Mermaid renderer |
 | `fonts/` | Local Persian and English fonts |
 | `icons/` | Extension icons and header logo |
 
@@ -132,11 +137,17 @@ Available from the Settings button in the header, the extension popup, or the Op
 The extension code is released under the **Apache License 2.0**. The full text is in [`LICENSE`](LICENSE).
 
 Third-party libraries and fonts in `vendor/` and `fonts/` are under their own licenses and are not covered by Apache 2.0:
-- PrismJS and Mermaid: MIT License
+- PrismJS, Mermaid and `@mermaid-js/layout-elk`: MIT License
+- elkjs (inside `vendor/mermaid-layout-elk.js`): Eclipse Public License 2.0
+- d3 (inside `vendor/mermaid-layout-elk.js`): ISC License
 - Inter and Vazirmatn: SIL Open Font License 1.1
 - IranSans, IranSans X and IranYekan X: the font vendor's license (check its terms before redistributing)
 
 ## Changelog
+
+### 1.7.0
+- Mermaid flowcharts use the compact ELK layout and the modern Neo look by default (rounded nodes, soft blue fill, orthogonal edges).
+- New settings to switch back to the classic Dagre layout or the classic look.
 
 ### 1.6.0
 - Zoom and pan for Mermaid diagrams: header buttons, Ctrl/⌘ + wheel, keyboard shortcuts in fullscreen, drag, pinch and double-click to reset.
